@@ -43,7 +43,7 @@
 using namespace std;
 
 
-
+ 
 
  vector<int> rotateArray(vector<int>&arr, int d){
 

@@ -50,45 +50,60 @@
 
 #include<iostream>
 #include<vector>
+
 using namespace std;
 
-bool findsubset(vector<int> &arr, vector<int> &brr){
+bool isFound(vector<int> &arr, vector<int> &brr){
+    int m = arr.size(), n =  brr.size();
 
-    int m = arr.size() ,  n = brr.size();
+    for(int i = 0; i< n; i++){
 
-    for(int i = 0;i<n;i++){
-        bool found = false;
+        bool found;
 
-        for(int j = 0;j < m;j++){
+        for(int j = 0; j < m; j++){
             if(brr[i] == arr[j]){
+
                 found = true;
                 arr[j] = -1;
                 break;
 
+
             }
         }
 
-        if(!found)
+        if(!found){
             return false;
-        
-        
+        }
+
+
+
+
+
+
+
+
+
+
     }
+
     return true;
 }
 
-int main()
-{
-    vector<int> arr = {11, 1, 13, 21, 3, 7};
-    vector<int> brr = {11, 3, 7, 1};
+int main(){
 
-    if (findsubset(arr, brr))
-    {
-        cout << "true" << endl;
+    vector<int> arr = {8,67,45,78,12,54};
+    vector<int> brr = {62,85};
+    
+    if(isFound(arr, brr)){
+        cout<<"true"<<" ";
     }
-    else
-    {
-        cout << "false" << endl;
+    else{
+        cout<<" false"<< " ";
     }
+
+
+
+
 
     return 0;
 }

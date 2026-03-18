@@ -1,1 +1,3 @@
- // map<int, string> m1;
+
+bool isSubset(vector<int> &a, vector<int> &b)
+{

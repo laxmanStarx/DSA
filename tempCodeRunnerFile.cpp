@@ -1,3 +1,4 @@
 
-bool isSubset(vector<int> &a, vector<int> &b)
-{
+        for(int i = 0; i < n; i++){
+            cout<< arr[i]<< " "<< endl;
+        }

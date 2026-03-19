@@ -1,21 +1,32 @@
 #include<iostream>
+#include<climits>
 
 using namespace std;
 
 void smallest(int arr[], int n){
 
     int min_value = arr[0];
+    int second_mini = INT_MAX;
 
     for(int i = 1; i<n;i++){
         if(min_value > arr[i]){
             min_value = arr[i];
         }
+        else if(arr[i] < second_mini && arr[i] != min_value){
+            second_mini = arr[i];
+        }
 
 
     }
 
-    cout << min_value << endl;
-    cout << arr[min_value]++ << endl;
+    if(second_mini == INT_MAX){
+        cout<< "No second smallest element"<< endl;
+    }else {
+        cout << "Smallest: " << min_value << endl;
+        cout << "Second Smallest: " << second_mini << endl;
+    }
+
+
 }
 
 

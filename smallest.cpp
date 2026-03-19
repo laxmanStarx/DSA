@@ -11,9 +11,11 @@ void smallest(int arr[], int n){
             min_value = arr[i];
         }
 
+
     }
 
     cout << min_value << endl;
+    cout << arr[min_value]++ << endl;
 }
 
 

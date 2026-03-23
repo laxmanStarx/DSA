@@ -1,2 +1,3 @@
+#include<iostream>
 
-    *p = 20;
+using namespace std;

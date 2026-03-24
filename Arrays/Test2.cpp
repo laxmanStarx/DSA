@@ -2,43 +2,49 @@
 #include<climits>
 using namespace std;
 
+void second_Max(int arr[], int n){
 
-int secondMax(int arr[], int n)
-{
+    int maxVal = arr[0];
+    int secondMaax = INT_MIN;
 
-    if(n < 2){
-        return n;
-    }
-
-    int max = arr[0];
-    int second_max = INT_MIN;
-
-    for(int i = 1; i< n; i++){
-        
-        if( max < arr[i]){
-            second_max = max;
-            max = arr[i];
+    for(int i = 1; i < n; i++)
+    {
+        if(maxVal < arr[i]){
+            secondMaax = maxVal;
+            maxVal = arr[i];
         }
-        else if( arr[i] > second_max && arr[i] != max)
-        {
-            second_max = arr[i];
+        else if(arr[i] > secondMaax && secondMaax != maxVal){
+            secondMaax = arr[i];
         }
     }
-    if(second_max == INT_MIN){
-        return -1;
+
+    if(secondMaax == INT_MIN){
+        cout<<-1;
     }
 
-    cout<< max<< endl;
+    cout<< maxVal<< " "<< secondMaax<<endl;
 
-  return (second_max);
+
+
+
 }
 
-int main ()
-{
 
-    int arr[6] = {78,89,65, 98, 560,6};
+int main(){
 
-    cout<<secondMax(arr,6);
+    int n;
+
+    cin>>n;
+
+    int arr[n];
+
+    for(int i = 0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    second_Max(arr, n);
+
+
 
     return 0;
 }

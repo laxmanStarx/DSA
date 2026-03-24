@@ -1,4 +1,55 @@
-#include <iostream>
+#include<iostream>
+#include<vector>
+using namespace std;
+
+bool  subsetArray(vector<int> &a, vector<int> &b)
+{
+    int m = a.size();
+    int n = b.size();
+    // bool find = false;
+
+    for(int i = 0; i < m; i++)
+    {
+        bool find = true;
+        for(int j = 0; j < n; j ++)
+        {
+            if(a[i] == b[j]){
+                find = true;
+                   b[j] = -1;
+
+                break;
+
+            }
+        }
+            if(!find){
+        return  false;
+    }
+    }
+
+    return true;
+
+
+}
+
+int main()
+{
+
+vector<int> b = {11, 1, 13, 21, 3, 7};
+vector<int> a = {11,45,97,81};
+
+    if (subsetArray(a, b))
+    {
+        cout << "true" << endl;
+    }
+    else
+    {
+        cout << "false" << endl;
+    }
+    return 0;
+}
+
+
+// #include <iostream>
 // #include <vector>
 // using namespace std;
 

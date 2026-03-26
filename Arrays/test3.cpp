@@ -117,19 +117,38 @@ using namespace std;
 
 
 
-class A {
-public:
-    static int count;
+// class A {
+// public:
+//     static int count;
 
-    A() {
-        count++;
-    }
+//     A() {
+//         count++;
+//     }
+// };
+
+// int A::count = 0;
+
+// int main() {
+//     A a1, a2, a3;
+
+//     cout << A::count;
+// }
+
+
+// int main()
+// {
+
+//     int *ptr = NULL;
+//     cout<<*ptr;
+
+//     return 0;
+// }
+
+class Test {
+public:
+    Test(int x) {}
 };
 
-int A::count = 0;
-
 int main() {
-    A a1, a2, a3;
-
-    cout << A::count;
+    Test t;
 }

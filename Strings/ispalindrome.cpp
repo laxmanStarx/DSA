@@ -10,19 +10,11 @@ bool isPalindrome(string str){
     {
 
 
-        if(str[start] == str[end]){
-
-        int temp = str[start];
-        str[start] = str[end];
-        str[end] = temp;
-
-        return true;
-
-        cout<<"hello world";
-
-        }else{
+        if(str[start] != str[end])
+        {
             return false;
         }
+
 
 
 
@@ -34,6 +26,18 @@ bool isPalindrome(string str){
     }
 
     return true;
+
+    // for(int i = 0; i<str.size(); i++)
+    // {
+    //     str2.push_back(str[i]);
+    // }
+    // if(str2 == str){
+    //     cout<<"Yes it is palindrome"<<endl;
+    //     cout<<str2;
+    // }else{
+    //     cout<<"it is not plaindrome";
+    // }
+
 
     // for(int i = 0; i<str.size(); i++)
     // {
@@ -65,11 +69,13 @@ int main(){
 
     string str;
     cin>>str;
-    string str2;
-    if(str == str2){
-        cout<<isPalindrome(str);
+  
+   
+    if(isPalindrome(str) == true){
+        cout<<"yes it is palindrome";
     }else{
-        cout<<"it is not palindrome";
+        cout<<"no it is not a palindrome";
     }
+
     return 0;
 }

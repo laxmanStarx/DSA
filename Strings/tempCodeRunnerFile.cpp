@@ -1,2 +1,2 @@
-
-    cout<<str.substr(0,5);
+string s = "HelloWorld";
+cout << s.substr(0, 9); 

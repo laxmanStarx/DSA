@@ -2,37 +2,36 @@
 using namespace std;
 
 
-int removechar(string str)
+bool isAnagrams(string str1, string str2)
 {
-    for(int i = 0; i < str.length(); i ++)
-    {
-        if(str[i]<'A' || str[i] >'Z' && str[i] < 'a' || str[i] > 'z' )
-        {
-            str.erase(i, 1);
-            i--;
-        }
-    }
 
-    cout<<str;
+    int n = str1.length();
+    int m =  str2.length();
 
 
-
+if(str1.length() != str2.length()){
+    return false;
 }
 
+sort(str1.begin(), str1.end());
+sort(str2.begin(), str2.end());
 
+return(str1 == str2);
+
+
+
+};
 
 int main()
-
 {
+    string str1 = "silent";
+    string str2 = "listen";
 
-
-     string str = "$Gee*k;s..fo, r'Ge^eks?";
-
-
-
-    removechar(str);
-
-
-
+    if(isAnagrams(str1, str2) == true){
+        cout<<"true";
+    }
+    else{
+        cout<<"false";
+    }
     return 0;
 }

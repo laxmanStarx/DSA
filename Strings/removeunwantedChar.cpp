@@ -6,18 +6,23 @@ using namespace std;
 void removechar(string str)
 {
 
+    string result;
+
+
     for(int i = 0; i<str.length(); i++)
     {
-        if(str[i] < 'A' || str[i] > 'Z' && str[i] < 'a' || str[i] > 'z' )
+        
+        if(str[i] >= 'A' && str[i] <= 'Z' || str[i] >= 'a' && str[i] <='z' )
         {
 
-            str.erase(i, 1);
-            i--;
+            result+=str[i];
+
+
 
         }
     }
 
-    cout<< str;
+    cout<<  result;
 
 }
 

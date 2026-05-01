@@ -2,26 +2,27 @@
 
 using namespace std;
 
-bool equilibrium(int arr[], int n){
-    int middleIndex = n/2;
-    int sum = 0;
-    int sum2 = 0;
+int equilibrium(int arr[], int n){
 
-for(int i = 0; i < middleIndex; i++){
+    int totalSum = 0;
 
-    sum += arr[i];
+    for(int i = 0; i< n; i++){
+        totalSum += arr[i];
+    }
 
-}
+    int leftSum = 0;
 
-for(int j = middleIndex + 1; j < n; j++){
-    sum2 += arr[j];
-}
+    for(int j = 0; j<n ; j++){
+        int rightSum = totalSum - leftSum - arr[j];
+        if(leftSum == rightSum){
+            return j;
+        }
+        leftSum += arr[j];
+    }
 
-if( sum == sum2){
-    return true;
-}
+    return -1;
 
-return false;
+
 
 }
 
@@ -29,11 +30,12 @@ int main()
 {
     int arr[] = {-7, 1, 5, 2, -4, 3, 0};
 
-    if(equilibrium(arr , 7) == true){
-        cout<<"it is equilibrium"<<endl;
-    }else{
-        cout<<"It is not an equilibrium"<<endl;
-    }
+    // if(equilibrium(arr , 7) == true){
+    //     cout<<"it is equilibrium"<<endl;
+    // }else{
+    //     cout<<"It is not an equilibrium"<<endl;
+    // }
+    cout<<equilibrium(arr, 7)<<endl;
 
 
 

@@ -1,36 +1,43 @@
 #include<iostream>
 using namespace std;
 
-void rotatedArray(int* arr , int n){
+
+void rotate(int arr[],int start,int end ){
+
+    while(start < end){
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+
+        start++;
+        end --;
+    }
 
 
-         int k;
 
-         cin>> k;
-      
+}
+
+void rotatedArray(int arr[] , int n, int k){
+
+    k= k%n;;
+
+    // rotatedArray(rotate(arr, n), k);
+
+     rotate(arr, 0,n-1);
+
+    rotate(arr,0, k-1);
+    rotate(arr,k,n-1);
 
 
-    while(k > 0){
-     
- 
 
 
-    int firstElement = arr[n-1];
 
-    for(int i = n-k; i >= 0; i--){
-       arr[ i + 1] = arr[i];
+
+
+
+
+
        
-    }
-
-    arr[0] = firstElement;
-
-    k--;
-
-    }
-
-    for(int i = 0; i < n; i++){
-        cout<<arr[i];
-    }
 };
 
 
@@ -39,9 +46,20 @@ int main()
 
     int arr[7] = {2,3,4,5,6,7,8};
 
+    // rotate(arr,7);
+
+    int k;
+    cin>>k;
+
+    rotatedArray(arr,7,k);
+
+    for(int i =0; i<7;i++){
+        cout<<arr[i];
+    }
 
 
-    rotatedArray(arr , 7);
+
+
 
 
 
